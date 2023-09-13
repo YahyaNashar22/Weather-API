@@ -13,14 +13,6 @@ import partlycloudy from "./img/weather-icons/partlycloudy.svg"
 import rain from "./img/weather-icons/rain.svg"
 import snow from "./img/weather-icons/snow.svg"
 import unknown from "./img/weather-icons/unknown.svg"
-
-
-
-
-
-
-
-
 import "./App.css";
 
 function App(){
