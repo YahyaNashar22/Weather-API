@@ -16,7 +16,7 @@
 nav{
   background-color:rgb(148, 148, 251);
   width:100vw;
-  height: 10vh;
+  height: 15vh;
 }
 .inputCity{
   padding: 10px;
@@ -28,6 +28,12 @@ nav{
 .inputCity::placeholder , .inputCity{
   color:white;
   font-size:18px;
+}
+.showresults{
+  margin-left:5rem;
+  font-size: 24px;
+  background-color: rgb(117, 117, 253);
+  padding: 16px;
 }
 .findWeather{
   padding: 16px;
@@ -80,5 +86,8 @@ margin-top:8rem;
       display: flex;
       flex-direction: column;
       row-gap: 100px;
+    }
+    nav {
+      display: flex;
     }
 }
