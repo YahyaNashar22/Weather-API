@@ -32,7 +32,7 @@ function App(){
         </nav>
         <main>
           <section className="todayForecast chunk">
-          <img className="todayForecastPic" alt="todayWeatherLogo" src={cloudy} />
+          <img className="todayForecastPic" alt="todayWeatherLogo" src={partlycloudy} />
           <h1 className="overcast">overcast cloudy</h1>
           <h1 className="temperature">Temperature 10&deg;C to 11&deg;C</h1>
           <p className="humidityPressure
@@ -41,42 +41,42 @@ function App(){
           <section className="twentyFourHour">
             <div className="chunk c1">
               <p className="chunkTime">03:00</p>
-             <img className="threeHourChunk" alt="threeHourChunkPic" src="https://placekitten.com/100/100" />
+             <img className="threeHourChunk" alt="threeHourChunkPic" src={partlycloudy} />
               <p className="chunkTemp">8&deg;C</p>
             </div>
             <div className="chunk c2">
             <p className="chunkTime">06:00</p>
-            <img className="threeHourChunk" alt="threeHourChunkPic" src="https://placekitten.com/101/101" />
+            <img className="threeHourChunk" alt="threeHourChunkPic" src={partlycloudy} />
               <p className="chunkTemp">9&deg;C</p>
             </div>
             <div className="chunk c3">
             <p className="chunkTime">09:00</p>
-            <img className="threeHourChunk" alt="threeHourChunkPic" src="https://placekitten.com/99/99" />
+            <img className="threeHourChunk" alt="threeHourChunkPic" src={clear} />
               <p className="chunkTemp">14&deg;C</p>
             </div>
             <div className="chunk c4">
             <p className="chunkTime">12:00</p>
-            <img className="threeHourChunk" alt="threeHourChunkPic" src="https://placekitten.com/102/102" />
+            <img className="threeHourChunk" alt="threeHourChunkPic" src={clear} />
               <p className="chunkTemp">17&deg;C</p>
             </div>
             <div className="chunk c5">
             <p className="chunkTime">15:00</p>
-            <img className="threeHourChunk" alt="threeHourChunkPic" src="https://placekitten.com/102/103" />
+            <img className="threeHourChunk" alt="threeHourChunkPic" src={clear} />
               <p className="chunkTemp">18&deg;C</p>
             </div>
             <div className="chunk c6">
             <p className="chunkTime">18:00</p>
-            <img className="threeHourChunk" alt="threeHourChunkPic" src="https://placekitten.com/103/103" />
+            <img className="threeHourChunk" alt="threeHourChunkPic" src={clear} />
               <p className="chunkTemp">16&deg;C</p>
             </div>
             <div className="chunk c7">
             <p className="chunkTime">21:00</p>
-            <img className="threeHourChunk" alt="threeHourChunkPic" src="https://placekitten.com/104/100" />
+            <img className="threeHourChunk" alt="threeHourChunkPic" src={clear} />
               <p className="chunkTemp">16&deg;C</p>
             </div>
             <div className="chunk c8">
             <p className="chunkTime">21:00</p>
-            <img className="threeHourChunk" alt="threeHourChunkPic" src="https://placekitten.com/102/100" />
+            <img className="threeHourChunk" alt="threeHourChunkPic" src={partlycloudy} />
               <p className="chunkTemp">16&deg;C</p>
             </div>
           </section>
