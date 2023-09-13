@@ -15,23 +15,29 @@ import snow from "./img/weather-icons/snow.svg"
 import unknown from "./img/weather-icons/unknown.svg"
 import "./App.css";
 
-function App(){
-    return (
-      <div className="app">
-        <nav>
-          <input className="inputCity"  placeholder="Type a city name" />
-          <button className="findWeather" type="submit">FIND WEATHER</button>
-        </nav>
-        <main>
-          <section className="todayForecast chunk">
-          <img className="todayForecastPic" alt="todayWeatherLogo" src={partlycloudy} />
-          <h1 className="overcast">overcast cloudy</h1>
-          <h1 className="temperature">Temperature 10&deg;C to 11&deg;C</h1>
-          <p className="humidityPressure
-          "> <span style={{fontWeight:"bold"}}>Humidity</span> 78% <span  style={{fontWeight:"bold"}}>Pressure</span> 1009.48</p>
-          </section>
-          <section className="twentyFourHour">
-            <div className="chunk c1">
+function SearchBar(){
+  return(
+    <>
+    <input className="inputCity"  placeholder="Type a city name" />
+    <button className="findWeather" type="submit">FIND WEATHER</button>
+    </>
+  )
+}
+function WeatherNow(){
+  return(
+    <>
+    <img className="todayForecastPic" alt="todayWeatherLogo" src={partlycloudy} />
+    <h1 className="overcast">overcast cloudy</h1>
+    <h1 className="temperature">Temperature 10&deg;C to 11&deg;C</h1>
+    <p className="humidityPressure
+    "> <span style={{fontWeight:"bold"}}>Humidity</span> 78% <span  style={{fontWeight:"bold"}}>Pressure</span> 1009.48</p>
+    </>
+  )
+}
+function WeatherFullDay(){
+return(
+  <>
+  <div className="chunk c1">
               <p className="chunkTime">03:00</p>
              <img className="threeHourChunk" alt="threeHourChunkPic" src={partlycloudy} />
               <p className="chunkTemp">8&deg;C</p>
@@ -71,6 +77,22 @@ function App(){
             <img className="threeHourChunk" alt="threeHourChunkPic" src={partlycloudy} />
               <p className="chunkTemp">16&deg;C</p>
             </div>
+  </>
+)
+}
+
+function App(){
+    return (
+      <div className="app">
+        <nav>
+          <SearchBar />
+        </nav>
+        <main>
+          <section className="todayForecast chunk">
+          <WeatherNow />
+          </section>
+          <section className="twentyFourHour">
+            <WeatherFullDay />
           </section>
         </main>
       </div>
