@@ -56,12 +56,18 @@ margin-top:10rem;
   text-align:center;
 }
 .twentyFourHour{
-  width: 100vw;
+  width: 90vw;
   display:flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
   padding:16px;
   align-items: center;
+  margin-top:5rem;
 }
 .chunkTime , .chunkTemp {
   text-align: center;
+}
+.chunk{
+  display: flex;
+  flex-direction: column;
+  row-gap: 20px;
 }
