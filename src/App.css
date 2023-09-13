@@ -2,6 +2,9 @@
   height: 100vh;
   width: 100vw;
   transition: background-color 1s ease-in;
+  font-family: "Raleway", sans-serif;
+  margin:0;
+  background-color:rgb(158, 216, 254) ;
 }
 
 .app__header,
@@ -10,5 +13,55 @@
 }
 
 /*  Search bar */
-
+nav{
+  background-color:rgb(148, 148, 251);
+  width:100vw;
+  height: 10vh;
+}
+.inputCity{
+  padding: 10px;
+  margin: 28px 10px 0 10px ;
+  border: none;
+  background-color: rgb(148, 148, 251);
+  outline:none;
+}
+.inputCity::placeholder , .inputCity{
+  color:white;
+  font-size:18px;
+}
+.findWeather{
+  padding: 16px;
+  font-size: 18px;
+  background-color:rgb(117, 117, 253);
+  border: none;
+  font-weight: 100;
+  opacity: 0.7;
+}
 /* Current weather */
+main{
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+}
+.todayForecast{
+margin-top:10rem;
+}
+.todayForecastPic{
+  margin-left:30px;
+}
+.overcast{
+  color: white;
+}
+.temperature , .humidityPressure , .overcast{
+  text-align:center;
+}
+.twentyFourHour{
+  width: 100vw;
+  display:flex;
+  justify-content: space-between;
+  padding:16px;
+  align-items: center;
+}
+.chunkTime , .chunkTemp {
+  text-align: center;
+}

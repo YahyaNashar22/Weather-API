@@ -14,13 +14,14 @@ function App(){
           <button className="findWeather" type="submit">FIND WEATHER</button>
         </nav>
         <main>
-          <div className="todayForecast">
+          <section className="todayForecast">
           <img className="todayForecastPic" alt="todayWeatherLogo" src="https://placekitten.com/200/200" />
+          <h1 className="overcast">overcast cloudy</h1>
           <h1 className="temperature">Temperature 10&deg;C to 11&deg;C</h1>
           <p className="humidityPressure
           "> <span style={{fontWeight:"bold"}}>Humidity</span> 78% <span  style={{fontWeight:"bold"}}>Pressure</span> 1009.48</p>
-          </div>
-          <div className="twentyFourHour">
+          </section>
+          <section className="twentyFourHour">
             <div className="chunk1">
               <p className="chunkTime">03:00</p>
              <img className="threeHourChunk" alt="threeHourChunkPic" src="https://placekitten.com/100/100" />
@@ -61,7 +62,7 @@ function App(){
             <img className="threeHourChunk" alt="threeHourChunkPic" src="https://placekitten.com/102/100" />
               <p className="chunkTemp">16&deg;C</p>
             </div>
-          </div>
+          </section>
         </main>
       </div>
     );
