@@ -3,6 +3,23 @@ import Search from "./components/Search";
 
 import SayHi, { SayHello } from "./components/WeatherItem";
 import fakeWeatherData from "./fakeWeatherData.json";
+import storm from "./img/weather-icons/storm.svg"
+import fog from "./img/weather-icons/fog.svg"
+import clear from "./img/weather-icons/clear.svg"
+import cloudy from "./img/weather-icons/cloudy.svg"
+import drizzle from "./img/weather-icons/drizzle.svg"
+import mostlycloudy from "./img/weather-icons/mostlycloudy.svg"
+import partlycloudy from "./img/weather-icons/partlycloudy.svg"
+import rain from "./img/weather-icons/rain.svg"
+import snow from "./img/weather-icons/snow.svg"
+import unknown from "./img/weather-icons/unknown.svg"
+
+
+
+
+
+
+
 
 import "./App.css";
 
@@ -15,7 +32,7 @@ function App(){
         </nav>
         <main>
           <section className="todayForecast chunk">
-          <img className="todayForecastPic" alt="todayWeatherLogo" src="https://placekitten.com/200/200" />
+          <img className="todayForecastPic" alt="todayWeatherLogo" src={cloudy} />
           <h1 className="overcast">overcast cloudy</h1>
           <h1 className="temperature">Temperature 10&deg;C to 11&deg;C</h1>
           <p className="humidityPressure
