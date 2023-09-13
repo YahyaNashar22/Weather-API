@@ -71,7 +71,7 @@ margin-top:10rem;
   flex-direction: column;
   row-gap: 20px;
 }
-
+/* RESPONSIVE */
 @media(max-width:800px) {
     .twentyFourHour{
       display: flex;
