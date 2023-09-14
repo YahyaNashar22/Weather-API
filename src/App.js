@@ -17,8 +17,6 @@ import snow from "./img/weather-icons/snow.svg"
 import unknown from "./img/weather-icons/unknown.svg"
 import "./App.css"
 
-
-
 function SearchBar(){
   const [noresult , setRresult] = useState("search for a country");
   const handleClick = () => {
@@ -34,63 +32,69 @@ function SearchBar(){
 }
 
 function WeatherNow(){
+  let min = FakeWeather.list[0].main.temp_min;
+  let max = FakeWeather.list[0].main.temp_max;
+  let humidity = FakeWeather.list[0].main.humidity;
+  let pressure = FakeWeather.list[0].main.pressure;
   return(
     <>
     <img className="todayForecastPic" alt="todayWeatherLogo" src={partlycloudy} />
     <h1 className="overcast">overcast cloudy</h1>
-    <h1 className="temperature">Temperature 10&deg;C to 11&deg;C</h1>
+    <h1 className="temperature">Temperature  {min}&deg;C to {max}&deg;C</h1>
     <p className="humidityPressure
-    "> <span style={{fontWeight:"bold"}}>Humidity</span> 78% <span  style={{fontWeight:"bold"}}>Pressure</span> 1009.48</p>
+    "> <span style={{fontWeight:"bold"}}>Humidity  </span> {humidity}% <span  style={{fontWeight:"bold"}}>Pressure  </span>{pressure}</p>
     </>
   )
 }
 function WeatherFullDay(){
+  let t1=8 ,t2=9 , t3=14 , t4=17 , t5=18 , t6=16 , t7=16 , t8=16;
   return(
     <>
     <div className="chunk c1">
                 <p className="chunkTime">03:00</p>
                <img className="threeHourChunk" alt="threeHourChunkPic" src={partlycloudy} />
-                <p className="chunkTemp">8&deg;C</p>
+                <p className="chunkTemp">{t1}&deg;C</p>
               </div>
               <div className="chunk c2">
               <p className="chunkTime">06:00</p>
               <img className="threeHourChunk" alt="threeHourChunkPic" src={partlycloudy} />
-                <p className="chunkTemp">9&deg;C</p>
+                <p className="chunkTemp">{t2}&deg;C</p>
               </div>
               <div className="chunk c3">
               <p className="chunkTime">09:00</p>
               <img className="threeHourChunk" alt="threeHourChunkPic" src={clear} />
-                <p className="chunkTemp">14&deg;C</p>
+                <p className="chunkTemp">{t3}&deg;C</p>
               </div>
               <div className="chunk c4">
               <p className="chunkTime">12:00</p>
               <img className="threeHourChunk" alt="threeHourChunkPic" src={clear} />
-                <p className="chunkTemp">17&deg;C</p>
+                <p className="chunkTemp">{t4}&deg;C</p>
               </div>
               <div className="chunk c5">
               <p className="chunkTime">15:00</p>
               <img className="threeHourChunk" alt="threeHourChunkPic" src={clear} />
-                <p className="chunkTemp">18&deg;C</p>
+                <p className="chunkTemp">{t5}&deg;C</p>
               </div>
               <div className="chunk c6">
               <p className="chunkTime">18:00</p>
               <img className="threeHourChunk" alt="threeHourChunkPic" src={clear} />
-                <p className="chunkTemp">16&deg;C</p>
+                <p className="chunkTemp">{t6}&deg;C</p>
               </div>
               <div className="chunk c7">
               <p className="chunkTime">21:00</p>
               <img className="threeHourChunk" alt="threeHourChunkPic" src={clear} />
-                <p className="chunkTemp">16&deg;C</p>
+                <p className="chunkTemp">{t7}&deg;C</p>
               </div>
               <div className="chunk c8">
               <p className="chunkTime">21:00</p>
               <img className="threeHourChunk" alt="threeHourChunkPic" src={partlycloudy} />
-                <p className="chunkTemp">16&deg;C</p>
+                <p className="chunkTemp">{t8}&deg;C</p>
               </div>
     </>
   )
   }
 function App(){
+  console.log(FakeWeather)
     return ( 
       <div className="app">
         <nav>
