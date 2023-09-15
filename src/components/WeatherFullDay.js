@@ -1,7 +1,16 @@
 import partlycloudy from "../img/weather-icons/partlycloudy.svg";
 import clear from "../img/weather-icons/clear.svg";
 
-function WeatherFullDay({ data,icon1 ,icon2,icon3,icon4,icon5, icon6, icon7 }) {
+function WeatherFullDay({
+  data,
+  icon1,
+  icon2,
+  icon3,
+  icon4,
+  icon5,
+  icon6,
+  icon7,
+}) {
   console.log(data);
   let t1 = data.list[0].main.temp,
     t2 = data.list[1].main.temp,
@@ -14,20 +23,12 @@ function WeatherFullDay({ data,icon1 ,icon2,icon3,icon4,icon5, icon6, icon7 }) {
     <>
       <div className="chunk c1">
         <p className="chunkTime">03:00</p>
-        <img
-          className="threeHourChunk"
-          alt="threeHourChunkPic"
-          src={icon1}
-        />
+        <img className="threeHourChunk" alt="threeHourChunkPic" src={icon1} />
         <p className="chunkTemp">{t1}&deg;C</p>
       </div>
       <div className="chunk c2">
         <p className="chunkTime">06:00</p>
-        <img
-          className="threeHourChunk"
-          alt="threeHourChunkPic"
-          src={icon2}
-        />
+        <img className="threeHourChunk" alt="threeHourChunkPic" src={icon2} />
         <p className="chunkTemp">{t2}&deg;C</p>
       </div>
       <div className="chunk c3">
@@ -55,10 +56,6 @@ function WeatherFullDay({ data,icon1 ,icon2,icon3,icon4,icon5, icon6, icon7 }) {
         <img className="threeHourChunk" alt="threeHourChunkPic" src={icon7} />
         <p className="chunkTemp">{t7}&deg;C</p>
       </div>
-<<<<<<< HEAD
-=======
-      
->>>>>>> master
     </>
   );
 }
