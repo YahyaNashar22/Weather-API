@@ -116,7 +116,7 @@ function App() {
             </section>
           </main>
         ) : (
-          <h1>Loading</h1>
+          <h1 className="loading">Loading , please wait ...</h1>
         )}
       </>
     </div>
