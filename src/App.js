@@ -26,6 +26,41 @@ function App() {
   const [data, setData] = useState(null);
   const [isloading, setIsLoading] = useState(false);
 
+
+  function iconsdata (x){
+    var imgname
+    if (x<300) {
+      imgname=storm 
+    }
+    else if (x>300 && x<499) {
+      imgname=drizzle
+    }
+    else if (x>500 && x<599) {
+      imgname=rain
+    }
+    else if (x>600 && x<699) {
+      imgname=snow
+    }
+    else if (x>700 && x<799) {
+      imgname=fog
+    }
+    else if (x==800) {
+      imgname=clear
+    }
+    else if (x==801) {
+      imgname=partlycloudy
+    }
+    else if (x>801 && x<805) {
+      imgname=mostlycloudy
+  }
+  else{
+    imgname=unknown
+  }
+  return imgname
+}
+
+
+
   const handleClick2 = () => {
     SetLalues(document.getElementById("c").value);
   };
@@ -66,10 +101,18 @@ function App() {
         {data && !isloading ? (
           <main>
             <section className="todayForecast chunk">
-              <WeatherNow data={data} />
+              <WeatherNow data={data} icon={iconsdata(data.list[0].weather[0].id)} />
             </section>
             <section className="twentyFourHour">
-              <WeatherFullDay data={data} />
+              <WeatherFullDay data={data}  
+              icon1={iconsdata(data.list[1].weather[0].id)}
+              icon2={iconsdata(data.list[2].weather[0].id)}
+              icon3={iconsdata(data.list[3].weather[0].id)}
+              icon4={iconsdata(data.list[4].weather[0].id) }     
+              icon5={iconsdata(data.list[5].weather[0].id)}
+              icon6={iconsdata(data.list[6].weather[0].id)}
+              icon7={iconsdata(data.list[7].weather[0].id)}
+              />
             </section>
           </main>
         ) : (
@@ -79,4 +122,5 @@ function App() {
     </div>
   );
 }
+
 export default App;

@@ -1,7 +1,7 @@
 import partlycloudy from "../img/weather-icons/partlycloudy.svg";
 import clear from "../img/weather-icons/clear.svg";
 
-function WeatherFullDay({ data }) {
+function WeatherFullDay({ data,icon1 ,icon2,icon3,icon4,icon5, icon6, icon7 }) {
   console.log(data);
   let t1 = data.list[0].main.temp,
     t2 = data.list[1].main.temp,
@@ -18,7 +18,7 @@ function WeatherFullDay({ data }) {
         <img
           className="threeHourChunk"
           alt="threeHourChunkPic"
-          src={partlycloudy}
+          src={icon1}
         />
         <p className="chunkTemp">{t1}&deg;C</p>
       </div>
@@ -27,44 +27,36 @@ function WeatherFullDay({ data }) {
         <img
           className="threeHourChunk"
           alt="threeHourChunkPic"
-          src={partlycloudy}
+          src={icon2}
         />
         <p className="chunkTemp">{t2}&deg;C</p>
       </div>
       <div className="chunk c3">
         <p className="chunkTime">09:00</p>
-        <img className="threeHourChunk" alt="threeHourChunkPic" src={clear} />
+        <img className="threeHourChunk" alt="threeHourChunkPic" src={icon3} />
         <p className="chunkTemp">{t3}&deg;C</p>
       </div>
       <div className="chunk c4">
         <p className="chunkTime">12:00</p>
-        <img className="threeHourChunk" alt="threeHourChunkPic" src={clear} />
+        <img className="threeHourChunk" alt="threeHourChunkPic" src={icon4} />
         <p className="chunkTemp">{t4}&deg;C</p>
       </div>
       <div className="chunk c5">
         <p className="chunkTime">15:00</p>
-        <img className="threeHourChunk" alt="threeHourChunkPic" src={clear} />
+        <img className="threeHourChunk" alt="threeHourChunkPic" src={icon5} />
         <p className="chunkTemp">{t5}&deg;C</p>
       </div>
       <div className="chunk c6">
         <p className="chunkTime">18:00</p>
-        <img className="threeHourChunk" alt="threeHourChunkPic" src={clear} />
+        <img className="threeHourChunk" alt="threeHourChunkPic" src={icon6} />
         <p className="chunkTemp">{t6}&deg;C</p>
       </div>
       <div className="chunk c7">
         <p className="chunkTime">21:00</p>
-        <img className="threeHourChunk" alt="threeHourChunkPic" src={clear} />
+        <img className="threeHourChunk" alt="threeHourChunkPic" src={icon7} />
         <p className="chunkTemp">{t7}&deg;C</p>
       </div>
-      <div className="chunk c8">
-        <p className="chunkTime">21:00</p>
-        <img
-          className="threeHourChunk"
-          alt="threeHourChunkPic"
-          src={partlycloudy}
-        />
-        <p className="chunkTemp">{t8}&deg;C</p>
-      </div>
+      
     </>
   );
 }
