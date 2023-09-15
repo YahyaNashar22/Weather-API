@@ -1,5 +1,5 @@
 import partlycloudy from "../img/weather-icons/partlycloudy.svg";
-function WeatherNow({ data }) {
+function WeatherNow({ data ,icon}) {
   let min = data.list[0].main.temp_max;
   let max = data.list[0].main.temp_max;
   let humidity = data.list[0].main.humidity;
@@ -13,7 +13,7 @@ function WeatherNow({ data }) {
       <img
         className="todayForecastPic"
         alt="todayWeatherLogo"
-        src={partlycloudy}
+        src={icon}
       />
       <h1 className="overcast">overcast cloudy</h1>
       <h1 className="temperature">

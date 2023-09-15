@@ -25,6 +25,7 @@ function App() {
 
   const [data, setData] = useState(null);
   const [isloading, setIsLoading] = useState(false);
+
   const handleClick2 = () => {
     SetLalues(document.getElementById("c").value);
   };
@@ -65,10 +66,22 @@ function App() {
         {data && !isloading ? (
           <main>
             <section className="todayForecast chunk">
-              <WeatherNow data={data} />
+              <WeatherNow
+                data={data}
+                icon={iconsdata(data.list[0].weather[0].id)}
+              />
             </section>
             <section className="twentyFourHour">
-              <WeatherFullDay data={data} />
+              <WeatherFullDay
+                data={data}
+                icon1={iconsdata(data.list[1].weather[0].id)}
+                icon2={iconsdata(data.list[2].weather[0].id)}
+                icon3={iconsdata(data.list[3].weather[0].id)}
+                icon4={iconsdata(data.list[4].weather[0].id)}
+                icon5={iconsdata(data.list[5].weather[0].id)}
+                icon6={iconsdata(data.list[6].weather[0].id)}
+                icon7={iconsdata(data.list[7].weather[0].id)}
+              />
             </section>
           </main>
         ) : (
@@ -78,4 +91,5 @@ function App() {
     </div>
   );
 }
+
 export default App;
