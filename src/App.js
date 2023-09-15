@@ -15,6 +15,7 @@ import unknown from "./img/weather-icons/unknown.svg";
 import WeatherNow from "./components/WeatherNow";
 import SearchBar from "./components/SearchBar";
 import WeatherFullDay from "./components/WeatherFullDay";
+import NoInternetConnection from "./components/NoConnection";
 import "./App.css";
 
 function App() {
@@ -26,40 +27,29 @@ function App() {
   const [data, setData] = useState(null);
   const [isloading, setIsLoading] = useState(false);
 
-
-  function iconsdata (x){
-    var imgname
-    if (x<300) {
-      imgname=storm 
+  function iconsdata(x) {
+    var imgname;
+    if (x < 300) {
+      imgname = storm;
+    } else if (x > 300 && x < 499) {
+      imgname = drizzle;
+    } else if (x > 500 && x < 599) {
+      imgname = rain;
+    } else if (x > 600 && x < 699) {
+      imgname = snow;
+    } else if (x > 700 && x < 799) {
+      imgname = fog;
+    } else if (x == 800) {
+      imgname = clear;
+    } else if (x == 801) {
+      imgname = partlycloudy;
+    } else if (x > 801 && x < 805) {
+      imgname = mostlycloudy;
+    } else {
+      imgname = unknown;
     }
-    else if (x>300 && x<499) {
-      imgname=drizzle
-    }
-    else if (x>500 && x<599) {
-      imgname=rain
-    }
-    else if (x>600 && x<699) {
-      imgname=snow
-    }
-    else if (x>700 && x<799) {
-      imgname=fog
-    }
-    else if (x==800) {
-      imgname=clear
-    }
-    else if (x==801) {
-      imgname=partlycloudy
-    }
-    else if (x>801 && x<805) {
-      imgname=mostlycloudy
+    return imgname;
   }
-  else{
-    imgname=unknown
-  }
-  return imgname
-}
-
-
 
   const handleClick2 = () => {
     SetLalues(document.getElementById("c").value);
@@ -75,12 +65,18 @@ function App() {
         `http://api.openweathermap.org/data/2.5/forecast?q=${lalues}&cnt=8&units=metric&appid=${api_key}`
       )
         .then((res) => {
+          if (!res.ok) {
+            throw Error("could not fetch the data");
+          }
           return res.json();
         })
         .then((data) => {
           setData(data);
 
           setIsLoading(false);
+        })
+        .catch((err) => {
+          console.log(err.message);
         });
     }
   };
@@ -91,33 +87,45 @@ function App() {
   return (
     <div className="App">
       <>
-        <nav>
-          <SearchBar
-            noresult={noresult}
-            handleClick={handleClick}
-            handleClick2={handleClick2}
-          />
-        </nav>
-        {data && !isloading ? (
-          <main>
-            <section className="todayForecast chunk">
-              <WeatherNow data={data} icon={iconsdata(data.list[0].weather[0].id)} />
-            </section>
-            <section className="twentyFourHour">
-              <WeatherFullDay data={data}  
-              icon1={iconsdata(data.list[1].weather[0].id)}
-              icon2={iconsdata(data.list[2].weather[0].id)}
-              icon3={iconsdata(data.list[3].weather[0].id)}
-              icon4={iconsdata(data.list[4].weather[0].id) }     
-              icon5={iconsdata(data.list[5].weather[0].id)}
-              icon6={iconsdata(data.list[6].weather[0].id)}
-              icon7={iconsdata(data.list[7].weather[0].id)}
-              />
-            </section>
-          </main>
-        ) : (
-          <h1 className="loading">Loading , please wait ...</h1>
-        )}
+        <NoInternetConnection>
+          <nav>
+            <SearchBar
+              noresult={noresult}
+              handleClick={handleClick}
+              handleClick2={handleClick2}
+            />
+          </nav>
+          {data && !isloading ? (
+            <main>
+              <section className="todayForecast chunk">
+                <WeatherNow
+                  data={data}
+                  icon={iconsdata(data.list[0].weather[0].id)}
+                />
+              </section>
+              <section className="twentyFourHour">
+                <WeatherFullDay
+                  data={data}
+                  icon1={iconsdata(data.list[1].weather[0].id)}
+                  icon2={iconsdata(data.list[2].weather[0].id)}
+                  icon3={iconsdata(data.list[3].weather[0].id)}
+                  icon4={iconsdata(data.list[4].weather[0].id)}
+                  icon5={iconsdata(data.list[5].weather[0].id)}
+                  icon6={iconsdata(data.list[6].weather[0].id)}
+                  icon7={iconsdata(data.list[7].weather[0].id)}
+                />
+              </section>
+            </main>
+          ) : (
+            <h1 className="loading">
+              Loading , please wait ...{<br />}
+              <span className="loadingsub">
+                If this takes too long please make sure you input correct city
+                name
+              </span>
+            </h1>
+          )}
+        </NoInternetConnection>
       </>
     </div>
   );
