@@ -25,7 +25,6 @@ function App() {
 
   const [data, setData] = useState(null);
   const [isloading, setIsLoading] = useState(false);
-
   const handleClick2 = () => {
     SetLalues(document.getElementById("c").value);
   };

@@ -9,8 +9,7 @@ function WeatherFullDay({ data }) {
     t4 = data.list[3].main.temp,
     t5 = data.list[4].main.temp,
     t6 = data.list[5].main.temp,
-    t7 = data.list[6].main.temp,
-    t8 = data.list[7].main.temp;
+    t7 = data.list[6].main.temp;
   return (
     <>
       <div className="chunk c1">
@@ -55,15 +54,6 @@ function WeatherFullDay({ data }) {
         <p className="chunkTime">21:00</p>
         <img className="threeHourChunk" alt="threeHourChunkPic" src={clear} />
         <p className="chunkTemp">{t7}&deg;C</p>
-      </div>
-      <div className="chunk c8">
-        <p className="chunkTime">21:00</p>
-        <img
-          className="threeHourChunk"
-          alt="threeHourChunkPic"
-          src={partlycloudy}
-        />
-        <p className="chunkTemp">{t8}&deg;C</p>
       </div>
     </>
   );
