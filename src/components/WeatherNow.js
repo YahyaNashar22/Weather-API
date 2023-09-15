@@ -1,6 +1,5 @@
 import partlycloudy from "../img/weather-icons/partlycloudy.svg";
 function WeatherNow({ data }) {
-  // const data = props.data;
   console.log(data);
   //   let min = data.list[0].main.temp_max;
   //   let max = data.list[0].main.temp_max;
