@@ -69,7 +69,7 @@ function App() {
               <WeatherNow data={data} />
             </section>
             <section className="twentyFourHour">
-              <WeatherFullDay />
+              <WeatherFullDay data={data} />
             </section>
           </main>
         ) : (
