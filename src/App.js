@@ -20,28 +20,38 @@ import "./App.css";
 function App() {
   var api_key = "c1a97940da358fee0b27f79c504f0cf1";
   const [noresult, setRresult] = useState("search for a country");
-  const [lalues, SetLalues] = useState("");
-  const [data, setData] = useState(null);
+  const [lalues, SetLalues] = useState("beirut");
   const fakeData = fakeWeather;
-  console.log(fakeData);
+
+  const [data, setData] = useState(null);
+  const [isloading, setIsLoading] = useState(false);
+
   const handleClick2 = () => {
     SetLalues(document.getElementById("c").value);
   };
   const handleClick = () => {
     setRresult(`the results for ${document.getElementById("c").value} are:`);
   };
+  ////////// test area /////////////
+  const fetchy = () => {
+    if (lalues !== "") {
+      setIsLoading(true);
+      fetch(
+        `http://api.openweathermap.org/data/2.5/forecast?q=${lalues}&cnt=8&units=metric&appid=${api_key}`
+      )
+        .then((res) => {
+          return res.json();
+        })
+        .then((data) => {
+          setData(data);
+
+          setIsLoading(false);
+        });
+    }
+  };
+  /////////// test area ////////////
   useEffect(() => {
-    fetch(
-      `http://api.openweathermap.org/data/2.5/forecast?q=${document.getElementById(
-        "c"
-      )}&cnt=8&units=metric&appid=${api_key}`
-    )
-      .then((res) => {
-        return res.json();
-      })
-      .then((data) => {
-        setData(data);
-      });
+    fetchy();
   }, [lalues]);
   return (
     <div className="App">
@@ -53,14 +63,18 @@ function App() {
             handleClick2={handleClick2}
           />
         </nav>
-        <main>
-          <section className="todayForecast chunk">
-            <WeatherNow data={fakeWeather} />
-          </section>
-          <section className="twentyFourHour">
-            <WeatherFullDay />
-          </section>
-        </main>
+        {data && !isloading ? (
+          <main>
+            <section className="todayForecast chunk">
+              <WeatherNow data={data} />
+            </section>
+            <section className="twentyFourHour">
+              <WeatherFullDay />
+            </section>
+          </main>
+        ) : (
+          <h1>Loading</h1>
+        )}
       </>
     </div>
   );
